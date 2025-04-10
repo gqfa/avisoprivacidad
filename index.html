@@ -42,8 +42,13 @@
 
         .arrow {
             font-size: 24px;
-            margin-left: 16px; /* Separación de la flecha */
+            margin-left: 8px; /* Separación de la flecha */
             font-family: 'Arial', sans-serif; /* Usar una fuente simple */
+            opacity: 0.5; /* Transparencia */
+            border: solid transparent;
+            border-width: 0 5px 5px 5px; /* Solo contorno de triángulo */
+            border-bottom-color: #000; /* Color del contorno */
+            margin-top: 2px; /* Ajuste fino para que esté más cerca del título */
         }
 
         .content {
@@ -73,7 +78,7 @@
     <div class="container">
         <div class="header" onclick="toggleContent()">
             Aviso de Privacidad
-            <span class="arrow" id="arrow">▼</span>
+            <span class="arrow" id="arrow">▼</span> <!-- Flecha hacia abajo -->
         </div>
         <div class="content" id="privacyText">
             <p>“Química y Farmacia, S.A. de C.V., entidad legal constituida como sociedad mercantil, (en adelante, <strong>La Empresa</strong>) con domicilio en Autopista Saltillo-Monterrey KM 11.5, Fraccionamiento Capellanía, C.P. 25900 Ramos Arizpe” es la responsable del tratamiento y protección de todos aquellos datos personales que los titulares nos proporcionen bajo su consentimiento.</p>
@@ -119,7 +124,7 @@
   
 
             <p style="font-size: 13px; color: gray;">Última actualización [20/marzo/2024]</p>
- </div>
+        </div>
     </div>
 
     <script>
@@ -130,8 +135,8 @@
             const isHidden = content.style.display === "none" || content.style.display === "";
 
             content.style.display = isHidden ? "block" : "none";
-            header.style.backgroundColor = isHidden ? "#7ab8e8" : "#4da6ff";
-            arrow.textContent = isHidden ? "▲" : "▼";
+            header.style.backgroundColor = isHidden ? "#7ab8e8" : "#4da6ff"; // Cambio de color de fondo más azul
+            arrow.textContent = isHidden ? "▲" : "▼"; // Cambio de flecha
         }
     </script>
 </body>
