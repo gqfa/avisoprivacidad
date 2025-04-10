@@ -33,18 +33,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            transition: background-color 0.3s;
+        }
+
+        .header:hover {
+            background-color: #66b8ff; /* Tono azul más claro al hacer clic */
         }
 
         .arrow {
-            font-size: 20px;
-            margin-left: 10px;
-            animation: blink 1.5s step-end infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
+            font-size: 24px;
         }
 
         .content {
@@ -73,7 +70,8 @@
 <body>
     <div class="container">
         <div class="header" onclick="toggleContent()">
-            Aviso de Privacidad<span class="arrow" id="arrow">»»»</span>
+            Aviso de Privacidad
+            <span class="arrow" id="arrow">↓</span>
         </div>
         <div class="content" id="privacyText">
             <p>“Química y Farmacia, S.A. de C.V., entidad legal constituida como sociedad mercantil, (en adelante, <strong>La Empresa</strong>) con domicilio en Autopista Saltillo-Monterrey KM 11.5, Fraccionamiento Capellanía, C.P. 25900 Ramos Arizpe” es la responsable del tratamiento y protección de todos aquellos datos personales que los titulares nos proporcionen bajo su consentimiento.</p>
