@@ -37,7 +37,7 @@
         }
 
         .header:hover {
-            background-color: #a0c4e1; /* Azul más claro y grisáceo */
+            background-color: #7ab8e8; /* Azul claro menos grisáceo */
         }
 
         .arrow {
@@ -73,7 +73,7 @@
     <div class="container">
         <div class="header" onclick="toggleContent()">
             Aviso de Privacidad
-            <span class="arrow" id="arrow">⏬</span> 
+            <span class="arrow" id="arrow">▼</span>
         </div>
         <div class="content" id="privacyText">
             <p>“Química y Farmacia, S.A. de C.V., entidad legal constituida como sociedad mercantil, (en adelante, <strong>La Empresa</strong>) con domicilio en Autopista Saltillo-Monterrey KM 11.5, Fraccionamiento Capellanía, C.P. 25900 Ramos Arizpe” es la responsable del tratamiento y protección de todos aquellos datos personales que los titulares nos proporcionen bajo su consentimiento.</p>
@@ -119,17 +119,19 @@
   
 
             <p style="font-size: 13px; color: gray;">Última actualización [20/marzo/2024]</p>
-</div>
+ </div>
     </div>
 
     <script>
         function toggleContent() {
             const content = document.getElementById("privacyText");
             const header = document.querySelector(".header");
+            const arrow = document.getElementById("arrow");
             const isHidden = content.style.display === "none" || content.style.display === "";
 
             content.style.display = isHidden ? "block" : "none";
-            header.style.backgroundColor = isHidden ? "#a0c4e1" : "#4da6ff"; // Cambio de color de fondo más grisáceo
+            header.style.backgroundColor = isHidden ? "#7ab8e8" : "#4da6ff";
+            arrow.textContent = isHidden ? "▲" : "▼";
         }
     </script>
 </body>
