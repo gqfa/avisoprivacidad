@@ -24,13 +24,25 @@
         }
 
         .header {
-            background-color: #004080;
+            background-color: #4da6ff; /* azul más claro */
             color: white;
             padding: 16px 24px;
             cursor: pointer;
             user-select: none;
             font-size: 20px;
             font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .rotated {
+            transform: rotate(90deg);
         }
 
         .content {
@@ -44,7 +56,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="header" onclick="toggleContent()">Aviso de Privacidad</div>
+        <div class="header" onclick="toggleContent()">
+            Aviso de Privacidad
+            <span class="arrow" id="arrow">»»»</span>
+        </div>
         <div class="content" id="privacyText">
             “Química y Farmacia, S.A. de C.V., entidad legal constituida como sociedad mercantil, (en adelante, La Empresa) con domicilio en Autopista Saltillo-Monterrey KM 11.5, Fraccionamiento Capellanía, C.P. 25900 Ramos Arizpe” es la responsable del tratamiento y protección de todos aquellos datos personales que los titulares nos proporcionen bajo su consentimiento.
 
@@ -91,7 +106,10 @@ La Empresa cuenta y mantiene constantemente sus políticas y procedimientos en c
     <script>
         function toggleContent() {
             const content = document.getElementById("privacyText");
-            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+            const arrow = document.getElementById("arrow");
+            const isHidden = content.style.display === "none" || content.style.display === "";
+            content.style.display = isHidden ? "block" : "none";
+            arrow.classList.toggle("rotated", isHidden);
         }
     </script>
 </body>
