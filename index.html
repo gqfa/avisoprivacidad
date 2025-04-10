@@ -118,16 +118,17 @@
   
 
             <p style="font-size: 13px; color: gray;">Última actualización [20/marzo/2024]</p>
-        </div>
+</div>
     </div>
 
     <script>
         function toggleContent() {
             const content = document.getElementById("privacyText");
-            const arrow = document.getElementById("arrow");
+            const header = document.querySelector(".header");
             const isHidden = content.style.display === "none" || content.style.display === "";
+
             content.style.display = isHidden ? "block" : "none";
-            arrow.classList.toggle("rotated", isHidden);
+            header.style.backgroundColor = isHidden ? "#66b8ff" : "#4da6ff"; // Cambio de color de fondo
         }
     </script>
 </body>
