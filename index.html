@@ -37,19 +37,14 @@
         }
 
         .header:hover {
-            background-color: #7ab8e8; /* Azul claro menos grisáceo */
+            background-color: #80c7ff; /* Azul claro sin grisáceo */
         }
 
         .arrow {
             font-size: 24px;
-            margin-left: 4px; /* Ajuste para juntar más la flecha al título */
-            font-family: 'Arial', sans-serif; /* Usar una fuente simple */
+            margin-left: 8px; /* Ajuste para juntar más la flecha al título */
             opacity: 0.5; /* Transparencia */
-            border: solid transparent;
-            border-width: 0 5px 5px 5px; /* Solo contorno de triángulo */
-            border-bottom-color: transparent; /* Elimina la base inferior del triángulo */
-            border-top-color: #000; /* Color del contorno del triángulo */
-            margin-top: 0; /* Eliminar cualquier margen superior para que se quede junto al título */
+            font-family: 'Arial', sans-serif; /* Usar una fuente simple */
         }
 
         .content {
@@ -136,7 +131,7 @@
             const isHidden = content.style.display === "none" || content.style.display === "";
 
             content.style.display = isHidden ? "block" : "none";
-            header.style.backgroundColor = isHidden ? "#7ab8e8" : "#4da6ff"; // Cambio de color de fondo más azul
+            header.style.backgroundColor = isHidden ? "#80c7ff" : "#4da6ff"; // Cambio de color de fondo más azul
             arrow.textContent = isHidden ? "▲" : "▼"; // Cambio de flecha
         }
     </script>
