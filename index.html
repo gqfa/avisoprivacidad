@@ -30,25 +30,22 @@
             cursor: pointer;
             user-select: none;
             font-size: 20px;
-            font-weight: bold;
             display: flex;
             align-items: center;
+            justify-content: flex-start;
+            transition: background-color 0.3s;
+        }
+
+        .header:hover {
+            background-color: #80c7ff; /* Azul claro sin grisáceo */
         }
 
         .arrow {
-            font-size: 25px;
-            margin-left: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .arrow-up {
-            transform: rotate(180deg);
-        }
-
-        .hint {
-            font-size: 13px;
-            color: #eeeeee;
-            margin-left: 12px;
+            font-size: 24px;
+            margin-left: 16px;
+            opacity: 0.5;
+            font-family: 'Arial', sans-serif;
+            transition: transform 0.3s; /* Transición para la rotación */
         }
 
         .content {
@@ -72,16 +69,13 @@
             font-size: 13px;
             color: gray;
         }
-
-        .active {
-            background-color: #80c7ff ;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header" onclick="toggleContent()">
-            Aviso de Privacidad<span class="arrow" id="arrow">˅</span>
+            Aviso de Privacidad
+            <span class="arrow" id="arrow">v</span>
         </div>
         <div class="content" id="privacyText">
             <p>“Química y Farmacia, S.A. de C.V., entidad legal constituida como sociedad mercantil, (en adelante, <strong>La Empresa</strong>) con domicilio en Autopista Saltillo-Monterrey KM 11.5, Fraccionamiento Capellanía, C.P. 25900 Ramos Arizpe” es la responsable del tratamiento y protección de todos aquellos datos personales que los titulares nos proporcionen bajo su consentimiento.</p>
@@ -127,17 +121,20 @@
   
 
             <p style="font-size: 13px; color: gray;">Última actualización [20/marzo/2024]</p>
-        </div>
+         </div>
     </div>
 
     <script>
         function toggleContent() {
-            const content = document.getElementById("privacyText");
-            const arrow = document.getElementById("arrow");
-            const isHidden = content.style.display === "none" || content.style.display === "";
-            content.style.display = isHidden ? "block" : "none";
-            arrow.classList.toggle("arrow-up", isHidden);
-            document.querySelector('.container').classList.toggle('active', isHidden);
+            const content = document.getElementById('privacyText');
+            const arrow = document.getElementById('arrow');
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            }
         }
     </script>
 </body>
